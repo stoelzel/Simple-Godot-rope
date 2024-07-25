@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfmfqom41f2qk"]
+
+[ext_resource type="PackedScene" uid="uid://b01xj8xipkl61" path="res://Scenes/rope_point.tscn" id="1_b47f4"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.25, 0.25)
+
+[node name="Rope point" parent="." node_paths=PackedStringArray("connects_to", "connects_from") instance=ExtResource("1_b47f4")]
+position = Vector2(-8, -807)
+connects_to = NodePath("../Rope point2")
+connects_from = NodePath("../Node2D")
+stiffness = 0.25
+use_gravity = true
+
+[node name="Rope point2" parent="." node_paths=PackedStringArray("connects_to") instance=ExtResource("1_b47f4")]
+position = Vector2(280, -961)
+connects_to = NodePath("../Rope point3")
+stiffness = 0.25
+use_gravity = true
+
+[node name="Rope point3" parent="." node_paths=PackedStringArray("connects_to") instance=ExtResource("1_b47f4")]
+position = Vector2(121, -472)
+connects_to = NodePath("../Rope point4")
+stiffness = 0.25
+use_gravity = true
+
+[node name="Rope point4" parent="." node_paths=PackedStringArray("connects_to") instance=ExtResource("1_b47f4")]
+position = Vector2(300, -346)
+connects_to = NodePath("../Rope point5")
+stiffness = 0.25
+use_gravity = true
+
+[node name="Rope point5" parent="." node_paths=PackedStringArray("connects_to") instance=ExtResource("1_b47f4")]
+position = Vector2(465, -458)
+connects_to = NodePath("../Rope point6")
+stiffness = 0.25
+use_gravity = true
+
+[node name="Rope point6" parent="." instance=ExtResource("1_b47f4")]
+position = Vector2(505, -613)
+stiffness = 0.25
+use_gravity = true
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-13, -1043)
